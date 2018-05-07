@@ -213,4 +213,17 @@ public class CalDayTest{
       		assertTrue(cal1.isValid());
 
   }
+  @Test(timeout = 4000)
+  public void test20()  throws Throwable  {
+    Appt appt0 = new Appt(12, 30, 22, 4, 2018, "Lunch", "Lunch with my wife", "xyz@gmail.com");
+    Appt appt1 = new Appt(12, 10, 22, 5, 2018, "Shopping", "Shopping and buy stuffs", "xyz@gmail.com");
+    GregorianCalendar cal = new GregorianCalendar(2018, 4, 22, 12, 30, 00);
+    CalDay day0 = new CalDay(cal);
+    day0.addAppt(appt0);
+    assertEquals("5-22-2018 \n\t0:30AM Lunch Lunch with my wife ", day0.getFullInfomrationApp(day0));
+    GregorianCalendar cal1 = new GregorianCalendar(2018, 4, 22, 12, 10, 00);
+    CalDay day1 = new CalDay(cal1);
+    day1.addAppt(appt1);
+    assertEquals("5-22-2018 \n\t0:10AM Shopping Shopping and buy stuffs ", day1.getFullInfomrationApp(day1));
+  }
 }

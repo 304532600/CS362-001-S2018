@@ -27,7 +27,7 @@ DataHandler data= new DataHandler();
     			int startYear=2018;
     			String title="Birthday Party";
     			String description="This is my birthday party.";
-
+          String emailAddress="XYZ@gmail.com";
     			Appt appt = new Appt(startHour,
     							 startMinute ,
     							 startDay ,
